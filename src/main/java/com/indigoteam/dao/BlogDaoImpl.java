@@ -18,9 +18,10 @@ public class BlogDaoImpl implements BlogDao{
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<Blog> ListBlogs() {
+
+    public List<Blog> listBlogs() {
         Session session=this.sessionFactory.getCurrentSession();
-        List<Blog> bloglist=session.createQuery("from listarticles").list();
-        return null;
+        List<Blog> blogList=session.createQuery("from Blog").list();
+        return blogList;
     }
 }

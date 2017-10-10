@@ -19,10 +19,10 @@ public class BlogController {
         this.blogService = blogService;
     }
 
-    @RequestMapping(value="index",method = RequestMethod.GET)
+    @RequestMapping(value="blogs",method = RequestMethod.GET)
     public String listBlogs(Model model){
         model.addAttribute("blog",new Blog());
         model.addAttribute("listBlogs",this.blogService.listBlogs());
-        return "index";
+        return "blogs";
     }
 }

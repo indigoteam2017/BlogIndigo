@@ -6,5 +6,5 @@ import com.indigoteam.model.Blog;
 import java.util.List;
 
 public interface BlogDao {
-    public List<Blog> ListBlogs();
+    public List<Blog> listBlogs();
 }

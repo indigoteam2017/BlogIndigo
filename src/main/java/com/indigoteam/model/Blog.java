@@ -4,7 +4,7 @@ package com.indigoteam.model;
         import java.util.Date;
 
 @Entity
-@Table(name="listarticles")
+@Table(name="Blog")
 public class Blog {
     @Id
     @Column(name="ID")
@@ -17,8 +17,8 @@ public class Blog {
     @Column(name="Date")
     private Date Date;
 
-    @Column(name="IDAutor")
-    private int IDAutor;
+    @Column(name="Author")
+    private String Author;
 
     public int getID() {
         return ID;
@@ -44,23 +44,27 @@ public class Blog {
         Date = date;
     }
 
-    public int getIDAutor() {
-        return IDAutor;
+    public String getAuthor() {
+        return Author;
     }
 
-    public void setIDAutor(int IDAutor) {
-        this.IDAutor = IDAutor;
+    public void setAuthor(String author) {
+        Author = author;
     }
 
-    public int getIDArticle() {
-        return IDArticle;
+    public String getText() {
+        return Text;
     }
 
-    public void setIDArticle(int IDArticle) {
-        this.IDArticle = IDArticle;
+    public void setText(String text) {
+        Text = text;
     }
 
-    private int IDArticle;
+    @Column(name="Text")
+
+    private String Text;
+
+
 
 
 }

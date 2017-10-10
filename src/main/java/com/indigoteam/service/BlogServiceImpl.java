@@ -19,6 +19,6 @@ public class BlogServiceImpl implements BlogService{
     @Override
     @Transactional
     public List<Blog> listBlogs() {
-        return this.blogDao.ListBlogs();
+        return this.blogDao.listBlogs();
     }
 }

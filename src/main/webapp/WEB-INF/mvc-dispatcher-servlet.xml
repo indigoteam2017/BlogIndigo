@@ -18,7 +18,7 @@
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://localhost:3306/listarticles"/>
+                  value="jdbc:mysql://localhost:3306/blogarticles"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
@@ -26,27 +26,28 @@
     <!-- Hibernate 4 SessionFactory Bean definition -->
     <bean id="hibernate4AnnotatedSessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="annotatedClasses">
-            <list>
-                <value>com.indigoteam.model.Blog</value>
-            </list>
-        </property>
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
-                </prop>
-                <prop key="hibernate.show_sql">true</prop>
-            </props>
-        </property>
-    </bean>
+      <property name="dataSource" ref="dataSource"/>
 
-    <!--BookDao and BookService beans-->
-    <bean id="bookDao" class="com.indigoteam.dao.BlogDaoImpl">
+     <property name="annotatedClasses">
+         <list>
+             <value>com.indigoteam.model.Blog</value>
+         </list>
+     </property>
+     <property name="hibernateProperties">
+         <props>
+             <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
+             </prop>
+             <prop key="hibernate.show_sql">true</prop>
+         </props>
+     </property>
+ </bean>
+
+ <!--BookDao and BookService beans-->
+    <bean id="blogDao" class="com.indigoteam.dao.BlogDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="bookService" class="com.indigoteam.service.BlogServiceImpl">
+    <bean id="blogService" class="com.indigoteam.service.BlogServiceImpl">
         <property name="blogDao" ref="blogDao"/>
     </bean>
 
